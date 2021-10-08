@@ -8,10 +8,10 @@ USER_NAME = "abhishekvarma12345"
 
 setuptools.setup(
     name=f"{PROJECT_NAME}-{USER_NAME}",
-    version="0.0.2",
+    version="0.1.0",
     author=USER_NAME,
     author_email="abhishekvarmad@gmail.com",
-    description="Its an implementation of perceptron",
+    description="Its an implementation of perceptron and can create plots for logic gates",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url=f"https://github.com/{USER_NAME}/{PROJECT_NAME}",
@@ -28,6 +28,8 @@ setuptools.setup(
     python_requires=">=3.7",
     install_requires=[
         "numpy",
-        "tqdm"
+        "tqdm",
+        "matplotlib",
+        "joblib"
     ]
 )

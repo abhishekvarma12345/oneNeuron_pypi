@@ -15,6 +15,12 @@ class Perceptron:
     return np.where(z>0, 1, 0)
 
   def fit(self, X, y):
+    """training the perceptron
+
+    Args:
+        X (pd.DataFrame): Independent features DataFrame
+        y (pd.DataFrame): Dependent feature DataFrame
+    """
     self.X = X
     self.y = y
 
@@ -36,10 +42,23 @@ class Perceptron:
 
 
   def predict(self, X):
+    """For generating predictions for unknown data
+
+    Args:
+        X (np.array): array of inputs
+
+    Returns:
+        np.array: array of predictions
+    """
     X_with_bias = np.c_[X, -np.ones((len(X), 1))]
     return self.activationFunction(X_with_bias, self.weights)
   
   def total_loss(self):
+    """total training error
+
+    Returns:
+        float: sum of errors of trained model
+    """
     total_loss = np.sum(self.error)
     logging.info(f"total_loss: {total_loss}")
     return total_loss
